@@ -1,0 +1,61 @@
+/*Fuente principal de la página*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+html{
+	overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+	width: 6px;
+}
+body::-webkit-scrollbar-thumb{
+	background: #2eb4c7;
+}
+body::-webkit-scrollbar-track{
+	background: black;
+}
+
+body{
+	font-family: 'Josefin Sans', sans-serif;
+	background: linear-gradient(to top left, #0a0a0a, black);
+}
+
+h1,h3,H5{
+    color:white;
+}
+
+nav h2:hover, u{
+	color: #2eb4c7;
+	opacity: 100%;
+}
+
+nav ul li ul{
+	width: 100%;
+}
+
+#navbarNavDropdown{
+	justify-content: center;
+	background: black;
+	opacity: 90%;
+}
+
+#fondo{
+	background-image: url(../img/bg.jpg); 
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	background-attachment: fixed
+}
+
+section{
+	background: black;
+	color: white;
+	opacity: 93%;
+	text-align: justify;
+}
+
+
+@media (max-width: 1366px) {
+	nav h2, u{
+		font-size: 24px;
+	}
+}
