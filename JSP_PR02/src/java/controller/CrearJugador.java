@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import hashmap.Jugador;
 import hashmap.JugadorHashmap;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -42,7 +43,10 @@ public class CrearJugador extends HttpServlet {
          
  
             String nombre = request.getParameter("nombre");
-            String fechaNac = request.getParameter("fechaNac");
+            String fecha = request.getParameter("fechaNac");
+            
+            GregorianCalendar fechaNac = new GregorianCalendar(getAnio(fecha), getMes(fecha), getDia(fecha));
+            
             int intentos = Integer.parseInt(request.getParameter("intentos"));
             
             Jugador j = new Jugador(nombre, fechaNac, intentos);
@@ -70,6 +74,21 @@ public class CrearJugador extends HttpServlet {
 //              response.sendRedirect(request.getContextPath()+ "/ranking.jsp");
         }
         
+    }
+    
+    private int getDia(String fecha) {
+        String[] partes = fecha.split("-");
+        return Integer.parseInt(partes[2]);
+    }
+    
+    private int getMes(String fecha) {
+        String[] partes = fecha.split("-");
+        return Integer.parseInt(partes[1]);
+    }
+    
+    private int getAnio(String fecha) {
+        String[] partes = fecha.split("-");
+        return Integer.parseInt(partes[0]);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

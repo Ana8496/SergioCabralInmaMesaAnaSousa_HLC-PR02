@@ -20,9 +20,6 @@ public class JugadorHashmap {
     public JugadorHashmap() {
     }
 
-   
-    
-
 //    public void add1(String nombre, Date fechaNac, int intentos) {
 //        int edadAct = calcularEdad(fechaNac);
 //        int diaNac = calcularDiaNac(fechaNac);
@@ -44,9 +41,9 @@ public class JugadorHashmap {
 
     public void add(String nombre, Jugador j) {
 //        int edadAct = calcularEdad(j.getFechaNac());
-        int edadAct = calcularEdad(j.getFechaNacString());
-        int diaNac = calcularDiaNac(j.getFechaNacString());
-        int mesNac = calcularMesNac(j.getFechaNacString());
+        int edadAct = calcularEdad(j.getFechaNac());
+        int diaNac = (j.getFechaNac()).get(Calendar.DAY_OF_MONTH);
+        int mesNac = (j.getFechaNac()).get(Calendar.MONTH);
         int intentos = j.getIntentos();
 
         String horoscopo = signo(diaNac, mesNac);
@@ -55,34 +52,15 @@ public class JugadorHashmap {
         jugHash.put(nombre, jnew);
     }
 
-    public int calcularEdad(String nacimiento) {
+    public int calcularEdad(GregorianCalendar nacimiento) {
+        Calendar ahora = Calendar.getInstance();
 
-        String[] partes = nacimiento.split("-");
-        //año input type date
-        int edad = 2021 - Integer.parseInt(partes[0]);
+        long edadEnDias = (ahora.getTimeInMillis() - nacimiento.getTimeInMillis())
+                / 1000 / 60 / 60 / 24;
+
+        int edad = Double.valueOf(edadEnDias / 365.25d).intValue();
 
         return edad;
-
-    }
-
-    private int calcularDiaNac(String fechaNac) {
-
-        String[] partes = fechaNac.split("-");
-        //dia input type date
-        int dia = Integer.parseInt(partes[2]);
-
-        return dia;
-
-    }
-
-    private int calcularMesNac(String fechaNac) {
-
-        String[] partes = fechaNac.split("-");
-
-        int mes = Integer.parseInt(partes[1]);
-
-        return mes;
-
     }
 
     public String signo(int dia, int mes) {

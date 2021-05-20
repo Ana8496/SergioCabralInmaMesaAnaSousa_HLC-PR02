@@ -7,6 +7,7 @@ package hashmap;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -15,8 +16,7 @@ import java.util.Date;
 public class Jugador {
 
     private String nombre;
-    private Date fechaNac;
-    private String fechaNacS;
+    private GregorianCalendar fechaNac;
 
     private int edad;
     private String horoscopo;
@@ -39,9 +39,9 @@ public class Jugador {
 //        this.intentos = intentos;
 //
 //    }
-    public Jugador(String nombre, String fechaNacS, int intentos) {
+    public Jugador(String nombre, GregorianCalendar fechaNac, int intentos) {
         this.nombre = nombre;
-        this.fechaNacS = fechaNacS;
+        this.fechaNac = fechaNac;
         this.intentos = intentos;
 
     }
@@ -64,22 +64,11 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public Date getFechaNac() {
+    public GregorianCalendar getFechaNac() {
         return fechaNac;
     }
 
-    public String getFechaNacString() {
-
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-//        fechaNacS = sdf.format(fechaNac);
-        return fechaNacS;
-    }
-
-    public void setFechaNac(String fechaNac) {
-        this.fechaNacS = fechaNacS;
-    }
-
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(GregorianCalendar fechaNac) {
         this.fechaNac = fechaNac;
     }
 
