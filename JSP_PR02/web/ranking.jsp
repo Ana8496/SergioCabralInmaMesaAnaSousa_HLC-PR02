@@ -67,9 +67,9 @@
             </nav>
             <%
 
-                Jugador j1 = new Jugador("Sergio", new GregorianCalendar(1998, 11, 26), 4);
-                Jugador j2 = new Jugador("Inma", new GregorianCalendar(1998, 9, 5), 5);
-                Jugador j3 = new Jugador("Ana", new GregorianCalendar(2001, 10, 23), 6);
+                Jugador j1 = new Jugador("Sergio", new GregorianCalendar(1998, 10, 26), 4);
+                Jugador j2 = new Jugador("Inma", new GregorianCalendar(1998, 8, 5), 5);
+                Jugador j3 = new Jugador("Ana", new GregorianCalendar(2001, 9, 23), 6);
 
             %>
 

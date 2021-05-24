@@ -43,7 +43,7 @@ public class JugadorHashmap {
 //        int edadAct = calcularEdad(j.getFechaNac());
         int edadAct = calcularEdad(j.getFechaNac());
         int diaNac = (j.getFechaNac()).get(Calendar.DAY_OF_MONTH);
-        int mesNac = (j.getFechaNac()).get(Calendar.MONTH);
+        int mesNac = (j.getFechaNac()).get(Calendar.MONTH)+1;
         int intentos = j.getIntentos();
 
         String horoscopo = signo(diaNac, mesNac);
@@ -131,7 +131,7 @@ public class JugadorHashmap {
                 break;
             case 10:
                 if (dia > 22) {
-                    signo = "ESCORPION";
+                    signo = "ESCORPIO";
                 } else {
                     signo = "LIBRA";
                 }
@@ -140,7 +140,7 @@ public class JugadorHashmap {
                 if (dia > 21) {
                     signo = "SAGITARIO";
                 } else {
-                    signo = "ESCORPION";
+                    signo = "ESCORPIO";
                 }
                 break;
             case 12:
