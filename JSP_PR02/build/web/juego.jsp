@@ -114,7 +114,7 @@
                         <input type="hidden" value="${param.nombre}" name="nombre"/>
                         <input type="hidden" value="${param.fechaNac}" name="fechaNac"/>
                         <input type="hidden" value="<%= v_intentos%>" name="intentos"/>
-                        <input type="text" value="<%= numSecreto%>" name="nSecreto"/> 
+                        <input type="hidden" value="<%= numSecreto%>" name="nSecreto"/> 
                         <input type="submit" value="Comprobar"/>
                     </form>
 
@@ -159,7 +159,7 @@
                                 intentos += 1;
                                 v_intentos = intentos;
                             %>
-                            <p>-----------${param.miNumero}(Mi numero)</p>
+                            
 
 
                             <h3 style="color:white" class="text-center pt-3">${param.nombre}, adivina el número del 1 al 100</h3>
@@ -175,7 +175,7 @@
                                 <input type="hidden" value="${param.nombre}" name="nombre"/>
                                 <input type="hidden" value="${param.fechaNac}" name="fechaNac"/>
                                 <input type="hidden" value="<%= v_intentos%>" name="intentos"/>
-                                <input type="text" value="<%= numSecreto%>" name="nSecreto"/>
+                                <input type="hidden" value="<%= numSecreto%>" name="nSecreto"/>
                                 <input type="submit" value="Comprobar"/>
                             </form>
 

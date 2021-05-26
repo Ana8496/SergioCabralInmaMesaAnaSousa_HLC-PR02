@@ -40,7 +40,6 @@ public class JugadorHashmap {
     }
 
     public void add(String nombre, Jugador j) {
-//        int edadAct = calcularEdad(j.getFechaNac());
         int edadAct = calcularEdad(j.getFechaNac());
         int diaNac = (j.getFechaNac()).get(Calendar.DAY_OF_MONTH);
         int mesNac = (j.getFechaNac()).get(Calendar.MONTH)+1;
